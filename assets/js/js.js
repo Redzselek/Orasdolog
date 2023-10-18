@@ -22,7 +22,7 @@ if(ido.length == 1)
 }
 
     var s = setInterval(() => {
-        document.getElementById("ido").innerHTML = ora+":"+perc+":"+mp
+        document.getElementById("ido").innerHTML = Forma(ora)+":"+Forma(perc)+":"+Forma(mp)
         
         if (mp!=0) {
             mp--
@@ -38,8 +38,17 @@ if(ido.length == 1)
         }
         if (ora == 0 && perc == 0 && mp == 0) {
             clearInterval(s)
-            document.getElementById("ido").innerHTML = "0:0:0"
-            alert("bazdmeg")
+            document.getElementById("ido").innerHTML = "00:00:00"
+            alert("Idő vége")   
         }
     }, 1000);
+}
+
+function Forma(x) {
+    if (x < 10) {
+        return "0"+x
+    }
+    else{
+        return x
+    }
 }
